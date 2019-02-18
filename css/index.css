@@ -85,18 +85,24 @@ div{
 	max-width: 800px;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
 	align-items: center;
 	margin: 0px auto;
 }
 .main{
-	width: 800px;
+	width: 100%;
 	margin: 0 auto;
 	border-top: 1px solid grey;
 	display: flex;
-	flex-wrap: wrap;
-	text-align: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 	padding-top: 25px;
+}
+@media(max-width: 500px){
+    .main{
+        border-top: 0px;
+        padding-top: 75px;
+    }
 }
 
 /*Nav*/
@@ -113,6 +119,11 @@ div.global-top{
         flex-direction: column;
         align-items: center;
     }    
+}
+@media(max-width: 500px){
+    div.global-top{
+        padding: 0px;
+    }
 }
 
 nav{
@@ -135,13 +146,31 @@ nav a{
         margin: 0px;
     }
 }
+@media(max-width: 500px){
+    nav{
+        flex-direction: column;
+        text-align: center;
+        border-bottom: 1px solid grey;
+    }
+    nav a{
+        width: 100%;
+        padding: 20px 0;
+        border-top: 1px solid grey;
+    }
+}
 
+/* Great Idea Div Wrap */
 @media(max-width: 800px){
     .glimwrap{
       order: 0;
       width: 100%;
-      padding: 30px;
+      padding: 0 0 30px;
     }
+}
+@media(max-width: 500px){
+    .glimwrap{
+        padding: 10px;
+    }   
 }
 
 .global-top div.global-img{
@@ -172,10 +201,17 @@ header{
         justify-content: center;
     }
 }
+@media(max-width: 500px){
+    header{
+        border-bottom: 1px solid black;
+        width: 95%;
+    }
+}
 
 header.index{
 	height: 300px;
 }
+
 header .header-text{
 	width: 350px;
 	height: 250px;
@@ -232,9 +268,25 @@ header .header-image{
 	display: flex;
 	justify-content: center;
 }
+@media(max-width: 500px){
+    .top{
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0;
+    }
+}
+
 .top div{
 	width: 50%;
 }
+@media(max-width: 500px){
+    .top div{
+        width: 90%;
+        padding: 15px 0;
+        margin-bottom: 30px;
+    }    
+}
+
 .top h2{
 	margin-bottom: 15px;
 }
@@ -243,11 +295,13 @@ header .header-image{
 	font-size: 20px;
 }
 .middle-img{
-	width: 100%;
-	height: 166px;
-	background-image: url(../img/mid-page-accent.jpg);
-	background-size: contain;
-	background-repeat: no-repeat;
+    width: 100%;
+    margin: 30px 0;
+}
+@media(max-width: 500px){
+    .middle-img{
+        width: 90%;
+    }
 }
 
 /*Bottom-Main and Address*/
@@ -256,9 +310,23 @@ header .header-image{
 	width: 100%;
 	display: flex;
 }
+@media(max-width: 500px){
+    .bottom{
+        flex-direction: column;
+        width: 90%;
+    }    
+}
+
 .bottom div{
 	width: 33%;
 }
+@media(max-width: 500px){
+    .bottom div{
+        width: 100%;
+        margin-bottom: 60px;
+    }    
+}
+
 .bottom h2{
 	margin-bottom: 15px;
 }
@@ -267,10 +335,15 @@ header .header-image{
 	font-size: 20px;
 }
 .address{
-	width: 800px;
+	width: 100%;
 	padding-top: 25px;
 	text-align: left;
 	border-top: 1px solid grey;
+}
+@media(max-width: 500px){
+    .address{
+        width: 90%;
+    }
 }
 
 /*Footer*/
@@ -284,7 +357,7 @@ footer{
 /*Wrap and Header*/
 header.services{
 	margin: 0px 0px 30px;
-	width: 800px;
+	width: 100%;
 	height: 200px;
 	background-image: url(../img/services-header.jpg);
 	background-size: contain;
@@ -338,7 +411,7 @@ section a{
 /* Bottom */
 .bottom.services{
 	border-top: 1px solid black;
-	width: 800px;
+	width: 90%;
 	display: flex;
 	justify-content: space-between;
 }
@@ -354,70 +427,4 @@ section a{
 .bottom.services ul li{
 	line-height: 2;
 	list-style: disc inside;
-}
-
-/* Media query for mobile */
-@media only screen and (max-width: 600px){
-	.main.services{
-		flex-wrap: nowrap;
-		flex-direction: column;
-	}
-	.bottom.services{
-		flex-wrap: nowrap;
-		flex-direction: column;		
-	}
-}
-
-/* Contact Page Specific */
-
-/* Header */
-.header.contact{
-	margin: 0px 0px 25px;
-	background-image: url(../img/services-header.jpg);
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: 800px;
-	height: 200px;
-	justify-content: center;
-}
-.header.contact h1{
-	font-size: 145px;
-}
-h1.contact-top{
-	font-size: 30px;
-}
-
-/* Main */
-.main.contact{
-	align-items: stretch;
-	border-bottom: 1px solid gray;
-}
-.main.contact section{
-	width: 45%;
-	padding: 15px;
-	margin: 2%;
-	background: lightsteelblue;
-	border-radius: 5%;
-}
-
-/* Features Page Specific */
-
-/* Main */
-.main.features{
-	border-bottom: 1px solid gray;
-	padding-bottom: 25px;
-}
-.main.features div{
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-}
-.main.features h2{
-	display: inline-block;
-}
-.item{
-	width: 30%;
-	padding: 1%;
-	margin: 1%;
-	background: lightgrey;
 }
