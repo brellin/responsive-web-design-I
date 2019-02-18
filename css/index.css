@@ -1,3 +1,411 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
 
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+
+/*Global*/
+@font-face{
+	font-family: Tangerine;
+	src: url('https://fonts.gstatic.com/s/tangerine/v10/IurY6Y5j_oScZZow4VOxCZZM.woff2');
+}
+@keyframes button{
+	50%{
+		border-radius: 50%;
+		padding: 20px;
+		border: 1.5px dashed black;
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+h1, h2{
+	font-weight: bold;
+}
+div{
+	box-sizing: border-box;
+}
+.wrap{
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0px auto;
+}
+.main{
+	width: 800px;
+	margin: 0 auto;
+	border-top: 1px solid grey;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: left;
+	padding-top: 25px;
+}
+
+/*Nav*/
+div.global-top{
+	width: 100%;
+	background: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+@media(max-width: 800px){
+    div.global-top{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }    
+}
+
+nav{
+    margin: 10px 0 0;
+}
+
+nav a{
+	margin: 0px 20px 0px;
+	color: gray;
+	text-decoration: none;
+}
+@media(max-width: 800px){
+    nav{
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    nav a{
+        margin: 0px;
+    }
+}
+
+@media(max-width: 800px){
+    .glimwrap{
+      order: 0;
+      width: 100%;
+      padding: 30px;
+    }
+}
+
+.global-top div.global-img{
+	height: 36px;
+	width: 183px;
+	margin: 0px;
+	background-image: url(../img/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@media(max-width: 800px){
+    .global-top div.global-img{
+        width: 100%;
+    }
+}
+
+/*Header*/
+header{
+	margin: 0px 0px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+@media(max-width: 800px){
+    header{
+        justify-content: center;
+    }
+}
+
+header.index{
+	height: 300px;
+}
+header .header-text{
+	width: 350px;
+	height: 250px;
+	margin: 0px 0px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+header h1{
+	font-size: 60px;
+}
+header button{
+	background: white;
+	border: 1px solid black;
+	padding: 2.5px 20px;
+}
+header button:hover{
+	animation: button 5s linear 0s infinite normal;
+}
+header .header-image{
+	width: 400px;
+	height: 250px;
+	display: flex;
+	align-items: center;
+	background-image: url('../img/header-img.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+@media(max-width: 800px){
+    header div.header-image{
+        display: none;
+    }
+}
+
+/*Top-Main + Mid Img*/
+.top{
+	width: 100%;
+	height: 125px;
+	display: flex;
+	justify-content: center;
+}
+.top div{
+	width: 50%;
+}
+.top h2{
+	margin-bottom: 15px;
+}
+.top div p{
+	font-family: Tangerine;
+	font-size: 20px;
+}
+.middle-img{
+	width: 100%;
+	height: 166px;
+	background-image: url(../img/mid-page-accent.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/*Bottom-Main and Address*/
+.bottom{
+	padding: 25px 0px;
+	width: 100%;
+	display: flex;
+}
+.bottom div{
+	width: 33%;
+}
+.bottom h2{
+	margin-bottom: 15px;
+}
+.bottom div p{
+	font-family: Tangerine;
+	font-size: 20px;
+}
+.address{
+	width: 800px;
+	padding-top: 25px;
+	text-align: left;
+	border-top: 1px solid grey;
+}
+
+/*Footer*/
+footer{
+	text-align: center;
+	margin: 50px 0px;
+}
+
+/* Services Page Specific*/
+
+/*Wrap and Header*/
+header.services{
+	margin: 0px 0px 30px;
+	width: 800px;
+	height: 200px;
+	background-image: url(../img/services-header.jpg);
+	background-size: contain;
+	background-repeat: no-repeat; 
+	display: flex;
+	justify-content: center;
+}
+header.services img{
+	width: 800px;
+	height: 200px;
+}
+
+/* Intro and Main */
+.intro{
+	width: 800px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+}
+.intro h1{
+	font-size: 25px;
+}
+
+.main.services{
+	margin-top: 25px;
+	border: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	
+}
+.main.services section{
+	width: 47%;
+	height: auto;
+	margin: 20px 0px;
+	padding: 15px;
+	border: 1px solid black;
+	background: gainsboro;
+}
+section a{
+	margin-top: 5px;
+	border: 1px solid black;
+	padding: 4px 25px;
+	background: white;
+	border-radius: 5%;
+	color: black;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+/* Bottom */
+.bottom.services{
+	border-top: 1px solid black;
+	width: 800px;
+	display: flex;
+	justify-content: space-between;
+}
+.bottom.services section{
+	width: 48%;
+}
+.bottom.services img{
+	width: 48%;
+}
+.bottom.services p{
+	margin: 10px 0;
+}
+.bottom.services ul li{
+	line-height: 2;
+	list-style: disc inside;
+}
+
+/* Media query for mobile */
+@media only screen and (max-width: 600px){
+	.main.services{
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+	.bottom.services{
+		flex-wrap: nowrap;
+		flex-direction: column;		
+	}
+}
+
+/* Contact Page Specific */
+
+/* Header */
+.header.contact{
+	margin: 0px 0px 25px;
+	background-image: url(../img/services-header.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 800px;
+	height: 200px;
+	justify-content: center;
+}
+.header.contact h1{
+	font-size: 145px;
+}
+h1.contact-top{
+	font-size: 30px;
+}
+
+/* Main */
+.main.contact{
+	align-items: stretch;
+	border-bottom: 1px solid gray;
+}
+.main.contact section{
+	width: 45%;
+	padding: 15px;
+	margin: 2%;
+	background: lightsteelblue;
+	border-radius: 5%;
+}
+
+/* Features Page Specific */
+
+/* Main */
+.main.features{
+	border-bottom: 1px solid gray;
+	padding-bottom: 25px;
+}
+.main.features div{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.main.features h2{
+	display: inline-block;
+}
+.item{
+	width: 30%;
+	padding: 1%;
+	margin: 1%;
+	background: lightgrey;
+}
