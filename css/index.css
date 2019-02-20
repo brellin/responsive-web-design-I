@@ -1,3 +1,275 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
 
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+
+/* Global */
+img{
+    width: 100%;
+}
+
+.wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media(min-width: 1000px){
+    .wrap{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+.global-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+@media(min-width: 750px){
+    .global-top{
+        border: none;
+    }
+}
+@media(min-width: 1000px){
+    .global-top{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.global-top nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    order: 1;
+}
+@media(min-width: 750px){
+    .global-top nav{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media(min-width: 1000px){
+    .global-top nav{
+        order: 0;
+    }
+}
+
+.global-top nav a{
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px solid grey;
+    color: grey;
+    text-decoration: none;
+}
+@media(min-width: 750px){
+    .global-top nav a{
+        padding: 0px 0px;
+        border: none;
+    }
+}
+
+.glimwrap{
+    padding: 15px 0;
+}
+@media(min-width: 750px){
+    .glimwrap{
+        padding: 30px 0 40px;
+    }
+}
+@media(min-width: 1000px){
+    .glimwrap{
+        margin-left: 50px;
+    }
+}
+@media(min-width: 1000px){
+    #home img{
+        width: 183px;
+    }
+}
+
+/* Header */
+header.index{
+    text-align: center;
+    padding: 40px 0 75px;
+    border-bottom: 1px solid black;
+    width: 90%;
+}
+@media(min-width: 1000px){
+    header.index{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+header.index h1{
+    font-size: 65px;
+}
+@media(min-width: 1000px){
+    header.index h1{
+        font-size: 75px;
+    }
+}
+
+header.index button{
+    background: white;
+    padding: 5px 35px;
+    border: 1px solid black;
+}
+@media(min-width: 1000px){
+    header.index button{
+        padding: 5px 40px;
+        font-size: 18px;
+    }
+}
+
+@media(min-width: 1000px){
+    .header-image{
+        background: url(../img/header-img.png) no-repeat center;
+        width: 379px;
+        height: 379px;
+    }
+}
+
+/* Main */
+.main{
+    width: 90%;
+    padding: 30px 0;
+    margin: 30px 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+@media(min-width: 750px){
+    .main{
+        margin: 15px 0;
+    }
+}
+@media(min-width: 750px){
+    .main{
+        margin-top: 0px;
+    }
+}
+
+.top{
+    width: 100%;
+    margin-bottom: 30px;
+}
+@media(min-width: 750px){
+    .top{
+        padding: 30px 0;
+        margin: 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.top div{
+    width: 100%;
+    margin-bottom: 30px;
+}
+@media(min-width: 750px){
+    .top div{
+        width: 47.5%;
+        padding: 5px 0;
+        margin: 0px;
+    }
+}
+
+.bottom{
+    width: 100%;
+}
+@media(min-width: 750px){
+    .bottom{
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.bottom div{
+    width: 100%;
+    padding: 30px 0;
+}
+@media(min-width: 750px){
+    .bottom div{
+        width: 33%;
+        padding: 10px 0;
+    }
+}
+
+.address{
+    border-top: 1px solid black;
+    padding-top: 30px;
+}
+@media(min-width: 750px){
+    .address{
+        padding: 30px 5px 0;
+    }
+}
+
+footer{
+    margin-bottom: 15px;
+}
