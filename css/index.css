@@ -77,13 +77,25 @@ p{
     margin: 0 auto;
 }
 
+@media (max-width: 800px){
+    .wrap{
+        margin: 0 15px;
+    }
+}
+
 nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 25px 0;
+}
+
+@media (max-width: 800px){
+    nav{
+        flex-wrap: wrap;
+        padding: 25px 20px;
+    }
 }
 
 nav a{
@@ -91,6 +103,15 @@ nav a{
     color: gray;
     font-size: 1.5rem;
     transition: .5s ease;
+}
+
+@media (max-width: 800px){
+    #home{
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 35px;
+    }
 }
 
 nav a:hover{
@@ -124,6 +145,7 @@ header.index .header-text button{
     padding: 5px 35px;
     background: white;
     border: 1px black solid;
+    cursor: pointer;
 }
 
 header.index .header-text button:hover{
@@ -135,6 +157,12 @@ header.index .header-image{
     background: url(../img/header-img.png) no-repeat center / contain;
     width: 50%;
     height: 77.5%;
+}
+
+@media (max-width: 800px){
+    header.index .header-image{
+        display: none;
+    }
 }
 
 .main{
