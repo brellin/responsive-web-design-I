@@ -14,7 +14,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -22,6 +21,9 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+html{
+    font-size: 62.5%;
 }
 body {
 	line-height: 1;
@@ -58,218 +60,209 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 15px;
 }
 
-/* Copy and paste your work from yesterday here and start to refactor into flexbox */
-
+/* My Code */
 /* Global */
-img{
-    width: 100%;
+h2{
+    font-size: 1.5rem;
+}
+p{
+    font-size: 1.5rem;
 }
 
 .wrap{
-    width: 100%;
     display: flex;
     flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-}
-@media(min-width: 1000px){
-    .wrap{
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
-.global-top{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid grey;
-}
-@media(min-width: 750px){
-    .global-top{
-        border: none;
-    }
-}
-@media(min-width: 1000px){
-    .global-top{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-.global-top nav{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    order: 1;
-}
-@media(min-width: 750px){
-    .global-top nav{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-@media(min-width: 1000px){
-    .global-top nav{
-        order: 0;
-    }
-}
-
-.global-top nav a{
-    width: 100%;
-    padding: 15px 0;
-    border-top: 1px solid grey;
-    color: grey;
+nav a{
     text-decoration: none;
-}
-@media(min-width: 750px){
-    .global-top nav a{
-        padding: 0px 0px;
-        border: none;
-    }
+    color: gray;
+    font-size: 1.5rem;
+    transition: .5s ease;
 }
 
-.glimwrap{
-    padding: 15px 0;
-}
-@media(min-width: 750px){
-    .glimwrap{
-        padding: 30px 0 40px;
-    }
-}
-@media(min-width: 1000px){
-    .glimwrap{
-        margin-left: 50px;
-    }
-}
-@media(min-width: 1000px){
-    #home img{
-        width: 183px;
-    }
+nav a:hover{
+    text-decoration: underline;
+    color: black;
 }
 
-/* Header */
+/* Index Specific */
+
 header.index{
-    text-align: center;
-    padding: 40px 0 75px;
-    border-bottom: 1px solid black;
-    width: 90%;
-}
-@media(min-width: 1000px){
-    header.index{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-    }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
 }
 
-header.index h1{
-    font-size: 65px;
-}
-@media(min-width: 1000px){
-    header.index h1{
-        font-size: 75px;
-    }
-}
-
-header.index button{
-    background: white;
-    padding: 5px 35px;
-    border: 1px solid black;
-}
-@media(min-width: 1000px){
-    header.index button{
-        padding: 5px 40px;
-        font-size: 18px;
-    }
-}
-
-@media(min-width: 1000px){
-    .header-image{
-        background: url(../img/header-img.png) no-repeat center;
-        width: 379px;
-        height: 379px;
-    }
-}
-
-/* Main */
-.main{
-    width: 90%;
-    padding: 30px 0;
-    margin: 30px 0 15px;
+header.index .header-text{
     display: flex;
     flex-direction: column;
-}
-@media(min-width: 750px){
-    .main{
-        margin: 15px 0;
-    }
-}
-@media(min-width: 750px){
-    .main{
-        margin-top: 0px;
-    }
+    align-items: center;
+    width: 50%;
 }
 
-.top{
-    width: 100%;
-    margin-bottom: 30px;
-}
-@media(min-width: 750px){
-    .top{
-        padding: 30px 0;
-        margin: 0px;
-        display: flex;
-        justify-content: space-between;
-    }
+header.index .header-text h1{
+    font-size: 7rem;
+    text-align: center;
 }
 
-.top div{
-    width: 100%;
-    margin-bottom: 30px;
-}
-@media(min-width: 750px){
-    .top div{
-        width: 47.5%;
-        padding: 5px 0;
-        margin: 0px;
-    }
+header.index .header-text button{
+    padding: 5px 35px;
+    background: white;
+    border: 1px black solid;
 }
 
-.bottom{
-    width: 100%;
-}
-@media(min-width: 750px){
-    .bottom{
-        padding: 30px 0;
-        display: flex;
-        justify-content: space-between;
-    }
+header.index .header-text button:hover{
+    background: black;
+    color: white;
 }
 
-.bottom div{
-    width: 100%;
-    padding: 30px 0;
+header.index .header-image{
+    background: url(../img/header-img.png) no-repeat center / contain;
+    width: 50%;
+    height: 77.5%;
 }
-@media(min-width: 750px){
-    .bottom div{
-        width: 33%;
-        padding: 10px 0;
-    }
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.main .top{
+    display: flex;
+    margin: 25px 0;
+}
+
+.main .top div{
+    padding: 2.5%;
+}
+
+.main .middle-img{
+    width: 100%;
+}
+
+.main .bottom{
+    display: flex;
+    margin: 25px 0;
+}
+
+.main .bottom div{
+    padding: 2.5%;
 }
 
 .address{
-    border-top: 1px solid black;
-    padding-top: 30px;
+    margin-top: 25px;
+    white-space: pre-line;
 }
-@media(min-width: 750px){
-    .address{
-        padding: 30px 5px 0;
-    }
+
+.address p{
+    font-size: 1.5rem;
 }
 
 footer{
-    margin-bottom: 15px;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Services Specific */
+header.services img{
+    width: 100%;
+}
+
+.intro{
+    margin: 25px 0;
+}
+
+.intro h1{
+    font-size: 3rem;
+}
+
+.main.services{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid black;
+}
+
+.main.services section{
+    border: 1px solid black;
+    width: 47.5%;
+    padding: 15px;
+    margin: 20px 0;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main.services section a{
+    text-decoration: none;
+    padding: 7px 30px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0 0;
+    transition: .5s ease;
+}
+
+.main.services section a:hover{
+    background: black;
+    color: white;
+}
+
+.bottom.services{
+    width: 100%;
+    margin: 35px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom.services section{
+    width: 45%;
+}
+
+.bottom.services section ul{
+    margin: 1rem 0;
+}
+
+.bottom.services section ul li{
+    font-size: 1.5rem;
+    line-height: 2;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.bottom.services .services-img{
+    width: 45%;
+    background: url(../img/services-info.png)no-repeat center / contain;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
 }
