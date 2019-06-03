@@ -83,6 +83,12 @@ p{
     }
 }
 
+@media (max-width: 500px){
+    .wrap{
+        margin: 0;
+    }
+}
+
 nav{
     width: 100%;
     display: flex;
@@ -98,11 +104,27 @@ nav{
     }
 }
 
+@media (max-width: 500px){
+    nav{
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
 nav a{
     text-decoration: none;
     color: gray;
     font-size: 1.5rem;
     transition: .5s ease;
+}
+
+@media (max-width: 500px){
+    nav a{
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid gray;
+    }
 }
 
 @media (max-width: 800px){
@@ -111,6 +133,12 @@ nav a{
         width: 100%;
         text-align: center;
         margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 500px){
+    #home{
+        margin-bottom: 0;
     }
 }
 
@@ -127,6 +155,13 @@ header.index{
     justify-content: center;
     align-items: center;
     height: 500px;
+}
+
+@media (max-width: 500px){
+    header.index{
+        height: inherit;
+        padding: 50px 0;
+    }   
 }
 
 header.index .header-text{
@@ -179,6 +214,12 @@ header.index .header-image{
     margin: 25px 0;
 }
 
+@media (max-width: 500px){
+    .main .top{
+        flex-direction: column;
+    }   
+}
+
 .main .top div{
     padding: 2.5%;
 }
@@ -190,6 +231,12 @@ header.index .header-image{
 .main .bottom{
     display: flex;
     margin: 25px 0;
+}
+
+@media (max-width: 500px){
+    .main .bottom{
+        flex-direction: column;
+    }
 }
 
 .main .bottom div{
