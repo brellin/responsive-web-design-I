@@ -14,7 +14,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -22,6 +21,9 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+html{
+    font-size: 62.5%;
 }
 body {
 	line-height: 1;
@@ -58,218 +60,327 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 15px;
 }
 
-/* Copy and paste your work from yesterday here and start to refactor into flexbox */
-
+/* My Code */
 /* Global */
-img{
-    width: 100%;
+h2{
+    font-size: 1.5rem;
+}
+p{
+    font-size: 1.5rem;
 }
 
 .wrap{
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 }
-@media(min-width: 1000px){
+
+@media (max-width: 800px){
     .wrap{
-        max-width: 1000px;
-        margin: 0 auto;
+        margin: 0 15px;
     }
 }
 
-.global-top{
+@media (max-width: 500px){
+    .wrap{
+        margin: 0;
+    }
+}
+
+nav{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+@media (max-width: 800px){
+    nav{
+        flex-wrap: wrap;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 500px){
+    nav{
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
+nav a{
+    text-decoration: none;
+    color: gray;
+    font-size: 1.5rem;
+    transition: .5s ease;
+}
+
+@media (max-width: 500px){
+    nav a{
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid gray;
+    }
+}
+
+@media (max-width: 800px){
+    #home{
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 500px){
+    #home{
+        margin-bottom: 0;
+    }
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+/* Index Specific */
+
+header.index{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+@media (max-width: 500px){
+    header.index{
+        height: inherit;
+        padding: 50px 0;
+    }   
+}
+
+header.index .header-text{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid grey;
+    width: 50%;
 }
-@media(min-width: 750px){
-    .global-top{
-        border: none;
-    }
+
+header.index .header-text h1{
+    font-size: 7rem;
+    text-align: center;
 }
-@media(min-width: 1000px){
-    .global-top{
-        flex-direction: row;
-        justify-content: space-between;
+
+header.index .header-text button{
+    padding: 5px 35px;
+    background: white;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+header.index .header-text button:hover{
+    background: black;
+    color: white;
+}
+
+header.index .header-image{
+    background: url(../img/header-img.png) no-repeat center / contain;
+    width: 50%;
+    height: 77.5%;
+}
+
+@media (max-width: 800px){
+    header.index .header-image{
+        display: none;
     }
 }
 
-.global-top nav{
-    width: 100%;
+.main{
     display: flex;
     flex-direction: column;
-    text-align: center;
-    order: 1;
-}
-@media(min-width: 750px){
-    .global-top nav{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-@media(min-width: 1000px){
-    .global-top nav{
-        order: 0;
-    }
-}
-
-.global-top nav a{
+    align-items: center;
     width: 100%;
-    padding: 15px 0;
-    border-top: 1px solid grey;
-    color: grey;
-    text-decoration: none;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
-@media(min-width: 750px){
-    .global-top nav a{
-        padding: 0px 0px;
-        border: none;
+
+.main .top{
+    display: flex;
+    margin: 25px 0;
+}
+
+@media (max-width: 500px){
+    .main .top{
+        flex-direction: column;
+    }   
+}
+
+.main .top div{
+    padding: 2.5%;
+}
+
+.main .middle-img{
+    width: 100%;
+}
+
+.main .bottom{
+    display: flex;
+    margin: 25px 0;
+}
+
+@media (max-width: 500px){
+    .main .bottom{
+        flex-direction: column;
     }
 }
 
-.glimwrap{
-    padding: 15px 0;
-}
-@media(min-width: 750px){
-    .glimwrap{
-        padding: 30px 0 40px;
-    }
-}
-@media(min-width: 1000px){
-    .glimwrap{
-        margin-left: 50px;
-    }
-}
-@media(min-width: 1000px){
-    #home img{
-        width: 183px;
-    }
+.main .bottom div{
+    padding: 2.5%;
 }
 
-/* Header */
-header.index{
+.address{
+    margin-top: 25px;
+    white-space: pre-line;
+}
+
+.address p{
+    font-size: 1.5rem;
+}
+
+footer{
+    width: 100%;
+    font-size: 1.5rem;
     text-align: center;
-    padding: 40px 0 75px;
-    border-bottom: 1px solid black;
-    width: 90%;
+    margin-bottom: 25px;
 }
-@media(min-width: 1000px){
-    header.index{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+
+/* Services Specific */
+header.services img{
+    width: 100%;
+}
+
+.intro{
+    margin: 25px 0;
+}
+
+@media (max-width: 800px){
+    .intro{
+        width: 75%;
+        margin: 25px auto;
+    }   
+}
+
+.intro h1{
+    font-size: 3rem;
+}
+
+.main.services{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid black;
+}
+
+@media (max-width: 800px){
+    .main.services{
+        flex-direction: column;
+    }
+}
+
+.main.services section{
+    border: 1px solid black;
+    width: 47.5%;
+    padding: 15px;
+    margin: 20px 0;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 800px){
+    .main.services section{
+        width: 75%;
         align-items: center;
     }
 }
 
-header.index h1{
-    font-size: 65px;
-}
-@media(min-width: 1000px){
-    header.index h1{
-        font-size: 75px;
-    }
-}
 
-header.index button{
+.main.services section a{
+    text-decoration: none;
+    padding: 7px 30px;
     background: white;
-    padding: 5px 35px;
+    color: black;
     border: 1px solid black;
-}
-@media(min-width: 1000px){
-    header.index button{
-        padding: 5px 40px;
-        font-size: 18px;
-    }
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0 0;
+    transition: .5s ease;
 }
 
-@media(min-width: 1000px){
-    .header-image{
-        background: url(../img/header-img.png) no-repeat center;
-        width: 379px;
-        height: 379px;
-    }
+.main.services section a:hover{
+    background: black;
+    color: white;
 }
 
-/* Main */
-.main{
-    width: 90%;
-    padding: 30px 0;
-    margin: 30px 0 15px;
+.bottom.services{
+    width: 100%;
+    margin: 35px 0;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
-@media(min-width: 750px){
-    .main{
-        margin: 15px 0;
-    }
-}
-@media(min-width: 750px){
-    .main{
-        margin-top: 0px;
+
+@media (max-width: 800px){
+    .bottom.services{
+        flex-direction: column;
+        align-items: center;
     }
 }
 
-.top{
-    width: 100%;
-    margin-bottom: 30px;
+.bottom.services section{
+    width: 45%;
 }
-@media(min-width: 750px){
-    .top{
-        padding: 30px 0;
-        margin: 0px;
-        display: flex;
-        justify-content: space-between;
+
+@media (max-width: 800px){
+    .bottom.services section{
+        width: 75%;
     }
 }
 
-.top div{
-    width: 100%;
-    margin-bottom: 30px;
-}
-@media(min-width: 750px){
-    .top div{
-        width: 47.5%;
-        padding: 5px 0;
-        margin: 0px;
-    }
+.bottom.services section ul{
+    margin: 1rem 0;
 }
 
-.bottom{
-    width: 100%;
-}
-@media(min-width: 750px){
-    .bottom{
-        padding: 30px 0;
-        display: flex;
-        justify-content: space-between;
-    }
+.bottom.services section ul li{
+    font-size: 1.5rem;
+    line-height: 2;
+    list-style-type: square;
+    list-style-position: inside;
 }
 
-.bottom div{
-    width: 100%;
-    padding: 30px 0;
-}
-@media(min-width: 750px){
-    .bottom div{
-        width: 33%;
-        padding: 10px 0;
-    }
+.bottom.services .services-img{
+    width: 45%;
+    background: url(../img/services-info.png)no-repeat center / contain;
 }
 
-.address{
-    border-top: 1px solid black;
-    padding-top: 30px;
-}
-@media(min-width: 750px){
-    .address{
-        padding: 30px 5px 0;
+@media (max-width: 800px){
+    .bottom.services .services-img{
+        width: 100%;
+        height: 275px;
+        order: -1;
+        margin-bottom: 25px;
     }
 }
 
 footer{
-    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
 }
